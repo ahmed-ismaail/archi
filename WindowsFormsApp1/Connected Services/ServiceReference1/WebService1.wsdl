@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="LoginFunc">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoginFuncResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="LoginFuncResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Register">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="age" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="weight" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="gender" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegisterResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ViewProfile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ViewProfileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ViewProfileResult" type="tns:UserClass" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UserClass">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="age" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="weight" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="gender" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DietPlan_Id" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="LoginFuncSoapIn">
+    <wsdl:part name="parameters" element="tns:LoginFunc" />
+  </wsdl:message>
+  <wsdl:message name="LoginFuncSoapOut">
+    <wsdl:part name="parameters" element="tns:LoginFuncResponse" />
+  </wsdl:message>
+  <wsdl:message name="RegisterSoapIn">
+    <wsdl:part name="parameters" element="tns:Register" />
+  </wsdl:message>
+  <wsdl:message name="RegisterSoapOut">
+    <wsdl:part name="parameters" element="tns:RegisterResponse" />
+  </wsdl:message>
+  <wsdl:message name="ViewProfileSoapIn">
+    <wsdl:part name="parameters" element="tns:ViewProfile" />
+  </wsdl:message>
+  <wsdl:message name="ViewProfileSoapOut">
+    <wsdl:part name="parameters" element="tns:ViewProfileResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebService1Soap">
+    <wsdl:operation name="LoginFunc">
+      <wsdl:input message="tns:LoginFuncSoapIn" />
+      <wsdl:output message="tns:LoginFuncSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Register">
+      <wsdl:input message="tns:RegisterSoapIn" />
+      <wsdl:output message="tns:RegisterSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ViewProfile">
+      <wsdl:input message="tns:ViewProfileSoapIn" />
+      <wsdl:output message="tns:ViewProfileSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebService1Soap" type="tns:WebService1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="LoginFunc">
+      <soap:operation soapAction="http://tempuri.org/LoginFunc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Register">
+      <soap:operation soapAction="http://tempuri.org/Register" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewProfile">
+      <soap:operation soapAction="http://tempuri.org/ViewProfile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebService1Soap12" type="tns:WebService1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="LoginFunc">
+      <soap12:operation soapAction="http://tempuri.org/LoginFunc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Register">
+      <soap12:operation soapAction="http://tempuri.org/Register" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewProfile">
+      <soap12:operation soapAction="http://tempuri.org/ViewProfile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService1">
+    <wsdl:port name="WebService1Soap" binding="tns:WebService1Soap">
+      <soap:address location="http://localhost:1960/WebService1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebService1Soap12" binding="tns:WebService1Soap12">
+      <soap12:address location="http://localhost:1960/WebService1.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
