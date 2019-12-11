@@ -7,6 +7,7 @@ namespace WebApplication111115111
 {
     public class UserClass
     {
+        public int userId;
         public string email;
         public string name;
         public int age;

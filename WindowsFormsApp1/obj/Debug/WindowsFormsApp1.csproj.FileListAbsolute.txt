@@ -9,3 +9,8 @@ C:\Users\Ahmed Ismail\source\repos\WebApplication111115111\WindowsFormsApp1\obj\
 C:\Users\Ahmed Ismail\source\repos\WebApplication111115111\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
 C:\Users\Ahmed Ismail\source\repos\WebApplication111115111\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 C:\Users\Ahmed Ismail\source\repos\WebApplication111115111\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\Ahmed Ismail\source\repos\WebApplication111115111\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.MainForm.resources
+C:\Users\Ahmed Ismail\source\repos\WebApplication111115111\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.profileForm.resources
+C:\Users\Ahmed Ismail\source\repos\WebApplication111115111\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.updateProfileForm.resources
+C:\Users\Ahmed Ismail\source\repos\WebApplication111115111\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.DietPlanForm.resources
+C:\Users\Ahmed Ismail\source\repos\WebApplication111115111\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.enterBloodForm.resources

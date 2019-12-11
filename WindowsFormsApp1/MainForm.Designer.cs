@@ -44,6 +44,7 @@
             this.ViewProfile_btn.TabIndex = 0;
             this.ViewProfile_btn.Text = "ViewProfile";
             this.ViewProfile_btn.UseVisualStyleBackColor = true;
+            this.ViewProfile_btn.Click += new System.EventHandler(this.ViewProfile_btn_Click);
             // 
             // updateProfile_btn
             // 
@@ -54,6 +55,7 @@
             this.updateProfile_btn.TabIndex = 1;
             this.updateProfile_btn.Text = "updateProfile";
             this.updateProfile_btn.UseVisualStyleBackColor = true;
+            this.updateProfile_btn.Click += new System.EventHandler(this.updateProfile_btn_Click);
             // 
             // viewGraph_btn
             // 
@@ -74,6 +76,7 @@
             this.viewDietPlan_btn.TabIndex = 3;
             this.viewDietPlan_btn.Text = "viewDietPlan";
             this.viewDietPlan_btn.UseVisualStyleBackColor = true;
+            this.viewDietPlan_btn.Click += new System.EventHandler(this.viewDietPlan_btn_Click);
             // 
             // button5
             // 
@@ -84,6 +87,7 @@
             this.button5.TabIndex = 4;
             this.button5.Text = "addBloodPressure";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // MainForm
             // 
@@ -97,6 +101,7 @@
             this.Controls.Add(this.ViewProfile_btn);
             this.Name = "MainForm";
             this.Text = "MainForm";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
 
         }

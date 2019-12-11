@@ -48,6 +48,7 @@
       </s:element>
       <s:complexType name="UserClass">
         <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
           <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="age" type="s:int" />
@@ -55,6 +56,31 @@
           <s:element minOccurs="0" maxOccurs="1" name="gender" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="DietPlan_Id" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ViewDietPlan">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ViewDietPlanResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ViewDietPlanResult" type="tns:DietPlanClass" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DietPlanClass">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="veges" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fruit" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="meat" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="drinks" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="milk" type="s:string" />
         </s:sequence>
       </s:complexType>
     </s:schema>
@@ -77,6 +103,12 @@
   <wsdl:message name="ViewProfileSoapOut">
     <wsdl:part name="parameters" element="tns:ViewProfileResponse" />
   </wsdl:message>
+  <wsdl:message name="ViewDietPlanSoapIn">
+    <wsdl:part name="parameters" element="tns:ViewDietPlan" />
+  </wsdl:message>
+  <wsdl:message name="ViewDietPlanSoapOut">
+    <wsdl:part name="parameters" element="tns:ViewDietPlanResponse" />
+  </wsdl:message>
   <wsdl:portType name="WebService1Soap">
     <wsdl:operation name="LoginFunc">
       <wsdl:input message="tns:LoginFuncSoapIn" />
@@ -89,6 +121,10 @@
     <wsdl:operation name="ViewProfile">
       <wsdl:input message="tns:ViewProfileSoapIn" />
       <wsdl:output message="tns:ViewProfileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ViewDietPlan">
+      <wsdl:input message="tns:ViewDietPlanSoapIn" />
+      <wsdl:output message="tns:ViewDietPlanSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WebService1Soap" type="tns:WebService1Soap">
@@ -120,6 +156,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="ViewDietPlan">
+      <soap:operation soapAction="http://tempuri.org/ViewDietPlan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="WebService1Soap12" type="tns:WebService1Soap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -143,6 +188,15 @@
     </wsdl:operation>
     <wsdl:operation name="ViewProfile">
       <soap12:operation soapAction="http://tempuri.org/ViewProfile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewDietPlan">
+      <soap12:operation soapAction="http://tempuri.org/ViewDietPlan" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

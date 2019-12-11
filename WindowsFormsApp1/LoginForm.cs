@@ -17,17 +17,22 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
 
+        public static string staticEmail = "";
+
+
         private void login_btn_Click(object sender, EventArgs e)
         {
             ServiceReference1.WebService1SoapClient ser = new ServiceReference1.WebService1SoapClient();
 
             if (ser.LoginFunc(email_txtbox.Text, password_txtbox.Text))
             {
-                Form1 f = new Form1();
+                staticEmail = email_txtbox.Text;
 
-                //LoginForm loginform = new LoginForm();
-                //loginform.Close();
 
+                LoginForm loginform = new LoginForm();
+                loginform.Close();
+                
+                MainForm f = new MainForm();
                 f.Show();
             }
         }

@@ -22,6 +22,8 @@ namespace WindowsFormsApp1.ServiceReference1 {
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
+        private int userIdField;
+        
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string emailField;
         
@@ -50,7 +52,20 @@ namespace WindowsFormsApp1.ServiceReference1 {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int userId {
+            get {
+                return this.userIdField;
+            }
+            set {
+                if ((this.userIdField.Equals(value) != true)) {
+                    this.userIdField = value;
+                    this.RaisePropertyChanged("userId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
         public string email {
             get {
                 return this.emailField;
@@ -63,7 +78,7 @@ namespace WindowsFormsApp1.ServiceReference1 {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
         public string name {
             get {
                 return this.nameField;
@@ -76,7 +91,7 @@ namespace WindowsFormsApp1.ServiceReference1 {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
         public int age {
             get {
                 return this.ageField;
@@ -89,7 +104,7 @@ namespace WindowsFormsApp1.ServiceReference1 {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
         public int weight {
             get {
                 return this.weightField;
@@ -102,7 +117,7 @@ namespace WindowsFormsApp1.ServiceReference1 {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
         public string gender {
             get {
                 return this.genderField;
@@ -115,7 +130,7 @@ namespace WindowsFormsApp1.ServiceReference1 {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
         public string password {
             get {
                 return this.passwordField;
@@ -128,7 +143,7 @@ namespace WindowsFormsApp1.ServiceReference1 {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
         public int DietPlan_Id {
             get {
                 return this.DietPlan_IdField;
@@ -137,6 +152,146 @@ namespace WindowsFormsApp1.ServiceReference1 {
                 if ((this.DietPlan_IdField.Equals(value) != true)) {
                     this.DietPlan_IdField = value;
                     this.RaisePropertyChanged("DietPlan_Id");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DietPlanClass", Namespace="http://tempuri.org/")]
+    [System.SerializableAttribute()]
+    public partial class DietPlanClass : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private int idField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string typeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string vegesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string fruitField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string meatField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string drinksField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string milkField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int id {
+            get {
+                return this.idField;
+            }
+            set {
+                if ((this.idField.Equals(value) != true)) {
+                    this.idField = value;
+                    this.RaisePropertyChanged("id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string type {
+            get {
+                return this.typeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.typeField, value) != true)) {
+                    this.typeField = value;
+                    this.RaisePropertyChanged("type");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string veges {
+            get {
+                return this.vegesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.vegesField, value) != true)) {
+                    this.vegesField = value;
+                    this.RaisePropertyChanged("veges");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string fruit {
+            get {
+                return this.fruitField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.fruitField, value) != true)) {
+                    this.fruitField = value;
+                    this.RaisePropertyChanged("fruit");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string meat {
+            get {
+                return this.meatField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.meatField, value) != true)) {
+                    this.meatField = value;
+                    this.RaisePropertyChanged("meat");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        public string drinks {
+            get {
+                return this.drinksField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.drinksField, value) != true)) {
+                    this.drinksField = value;
+                    this.RaisePropertyChanged("drinks");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+        public string milk {
+            get {
+                return this.milkField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.milkField, value) != true)) {
+                    this.milkField = value;
+                    this.RaisePropertyChanged("milk");
                 }
             }
         }
@@ -175,6 +330,13 @@ namespace WindowsFormsApp1.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ViewProfile", ReplyAction="*")]
         System.Threading.Tasks.Task<WindowsFormsApp1.ServiceReference1.ViewProfileResponse> ViewProfileAsync(WindowsFormsApp1.ServiceReference1.ViewProfileRequest request);
+        
+        // CODEGEN: Generating message contract since element name type from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ViewDietPlan", ReplyAction="*")]
+        WindowsFormsApp1.ServiceReference1.ViewDietPlanResponse ViewDietPlan(WindowsFormsApp1.ServiceReference1.ViewDietPlanRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ViewDietPlan", ReplyAction="*")]
+        System.Threading.Tasks.Task<WindowsFormsApp1.ServiceReference1.ViewDietPlanResponse> ViewDietPlanAsync(WindowsFormsApp1.ServiceReference1.ViewDietPlanRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -398,6 +560,74 @@ namespace WindowsFormsApp1.ServiceReference1 {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ViewDietPlanRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ViewDietPlan", Namespace="http://tempuri.org/", Order=0)]
+        public WindowsFormsApp1.ServiceReference1.ViewDietPlanRequestBody Body;
+        
+        public ViewDietPlanRequest() {
+        }
+        
+        public ViewDietPlanRequest(WindowsFormsApp1.ServiceReference1.ViewDietPlanRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ViewDietPlanRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string type;
+        
+        public ViewDietPlanRequestBody() {
+        }
+        
+        public ViewDietPlanRequestBody(string type) {
+            this.type = type;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ViewDietPlanResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ViewDietPlanResponse", Namespace="http://tempuri.org/", Order=0)]
+        public WindowsFormsApp1.ServiceReference1.ViewDietPlanResponseBody Body;
+        
+        public ViewDietPlanResponse() {
+        }
+        
+        public ViewDietPlanResponse(WindowsFormsApp1.ServiceReference1.ViewDietPlanResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ViewDietPlanResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public WindowsFormsApp1.ServiceReference1.DietPlanClass ViewDietPlanResult;
+        
+        public ViewDietPlanResponseBody() {
+        }
+        
+        public ViewDietPlanResponseBody(WindowsFormsApp1.ServiceReference1.DietPlanClass ViewDietPlanResult) {
+            this.ViewDietPlanResult = ViewDietPlanResult;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface WebService1SoapChannel : WindowsFormsApp1.ServiceReference1.WebService1Soap, System.ServiceModel.IClientChannel {
     }
@@ -509,6 +739,31 @@ namespace WindowsFormsApp1.ServiceReference1 {
             inValue.Body = new WindowsFormsApp1.ServiceReference1.ViewProfileRequestBody();
             inValue.Body.email = email;
             return ((WindowsFormsApp1.ServiceReference1.WebService1Soap)(this)).ViewProfileAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WindowsFormsApp1.ServiceReference1.ViewDietPlanResponse WindowsFormsApp1.ServiceReference1.WebService1Soap.ViewDietPlan(WindowsFormsApp1.ServiceReference1.ViewDietPlanRequest request) {
+            return base.Channel.ViewDietPlan(request);
+        }
+        
+        public WindowsFormsApp1.ServiceReference1.DietPlanClass ViewDietPlan(string type) {
+            WindowsFormsApp1.ServiceReference1.ViewDietPlanRequest inValue = new WindowsFormsApp1.ServiceReference1.ViewDietPlanRequest();
+            inValue.Body = new WindowsFormsApp1.ServiceReference1.ViewDietPlanRequestBody();
+            inValue.Body.type = type;
+            WindowsFormsApp1.ServiceReference1.ViewDietPlanResponse retVal = ((WindowsFormsApp1.ServiceReference1.WebService1Soap)(this)).ViewDietPlan(inValue);
+            return retVal.Body.ViewDietPlanResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<WindowsFormsApp1.ServiceReference1.ViewDietPlanResponse> WindowsFormsApp1.ServiceReference1.WebService1Soap.ViewDietPlanAsync(WindowsFormsApp1.ServiceReference1.ViewDietPlanRequest request) {
+            return base.Channel.ViewDietPlanAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<WindowsFormsApp1.ServiceReference1.ViewDietPlanResponse> ViewDietPlanAsync(string type) {
+            WindowsFormsApp1.ServiceReference1.ViewDietPlanRequest inValue = new WindowsFormsApp1.ServiceReference1.ViewDietPlanRequest();
+            inValue.Body = new WindowsFormsApp1.ServiceReference1.ViewDietPlanRequestBody();
+            inValue.Body.type = type;
+            return ((WindowsFormsApp1.ServiceReference1.WebService1Soap)(this)).ViewDietPlanAsync(inValue);
         }
     }
 }
