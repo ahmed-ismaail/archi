@@ -53,6 +53,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Connected Services\WcfService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="DietPlanForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,16 +139,20 @@
     <None Include="Connected Services\ServiceReference1\WindowsFormsApp1.ServiceReference1.LoginFuncResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceReference1\WindowsFormsApp1.ServiceReference1.RegisterResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceReference1\WindowsFormsApp1.ServiceReference1.UserClass.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Connected Services\ServiceReference1\WindowsFormsApp1.ServiceReference1.ViewDietPlanResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceReference1\WindowsFormsApp1.ServiceReference1.ViewProfileResponse.datasource">
+    <None Include="Connected Services\WcfService\WCFService.wsdl" />
+    <None Include="Connected Services\WcfService\WCFService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WcfService\WCFService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WcfService\WCFService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WcfService\WindowsFormsApp1.WcfService.UserClass.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
@@ -164,6 +173,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\ServiceReference1\" />
+    <WCFMetadataStorage Include="Connected Services\WcfService\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\ServiceReference1\WebService1.disco" />
@@ -176,6 +186,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\ServiceReference1\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WcfService\WCFService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WcfService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WcfService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WcfService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

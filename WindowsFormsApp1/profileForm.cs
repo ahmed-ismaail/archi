@@ -19,12 +19,12 @@ namespace WindowsFormsApp1
 
         private void profileForm_Load(object sender, EventArgs e)
         {
-            ServiceReference1.WebService1SoapClient s = new ServiceReference1.WebService1SoapClient();
+           WcfService.WCFServiceClient w = new WcfService.WCFServiceClient();
 
-           ServiceReference1.UserClass user = new ServiceReference1.UserClass();
+           WcfService.UserClass user = new WcfService.UserClass();
 
 
-            user = s.ViewProfile(LoginForm.staticEmail);
+            user = w.ViewProfile(LoginForm.staticEmail);
 
             name_Holder.Text = user.name;
             email_Holder.Text = user.email;

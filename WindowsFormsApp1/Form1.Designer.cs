@@ -41,6 +41,7 @@
             this.password = new System.Windows.Forms.Label();
             this.gender = new System.Windows.Forms.Label();
             this.email = new System.Windows.Forms.Label();
+            this.register_btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // name_txtbox
@@ -155,11 +156,22 @@
             this.email.TabIndex = 14;
             this.email.Text = "email";
             // 
+            // register_btn
+            // 
+            this.register_btn.Location = new System.Drawing.Point(200, 388);
+            this.register_btn.Name = "register_btn";
+            this.register_btn.Size = new System.Drawing.Size(75, 23);
+            this.register_btn.TabIndex = 15;
+            this.register_btn.Text = "register";
+            this.register_btn.UseVisualStyleBackColor = true;
+            this.register_btn.Click += new System.EventHandler(this.register_btn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(485, 432);
+            this.Controls.Add(this.register_btn);
             this.Controls.Add(this.email);
             this.Controls.Add(this.gender);
             this.Controls.Add(this.password);
@@ -195,6 +207,7 @@
         private System.Windows.Forms.Label password;
         private System.Windows.Forms.Label gender;
         private System.Windows.Forms.Label email;
+        private System.Windows.Forms.Button register_btn;
     }
 }
 

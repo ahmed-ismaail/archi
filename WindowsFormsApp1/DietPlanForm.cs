@@ -31,7 +31,7 @@ namespace WindowsFormsApp1
                 fruit_Holder.Text = plan.fruit;
                 meat_Holder.Text = plan.meat;
                 drinks_Holder.Text = plan.drinks;
-                meat_Holder.Text = plan.milk;
+                milk_Holder.Text = plan.milk;
             }
         }
     }

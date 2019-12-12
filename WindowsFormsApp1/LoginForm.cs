@@ -39,7 +39,7 @@ namespace WindowsFormsApp1
 
         private void register_btn_Click(object sender, EventArgs e)
         {
-            MainForm f = new MainForm();
+            Form1 f = new Form1();
 
             f.Show();
         }
